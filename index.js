@@ -1,11 +1,13 @@
 const express = require('express');
 const userRoute = require('./routes/userRoutes');
+const loginRoute = require('./routes/loginRoutes');
 
 const app = express();
 
 app.use(express.json());
 
 app.use('/user', userRoute);
+app.use('/login', loginRoute);
 
 app.use((err, _req, res, _next) => {
   if (!err.status) console.log(err);
