@@ -6,6 +6,12 @@ const createUser = async (userFields) => {
   return user;
 };
 
+const getAllUsers = async () => {
+  const users = await User.findAll();
+  return users;
+};
+
 module.exports = {
   createUser,
+  getAllUsers,
 };
